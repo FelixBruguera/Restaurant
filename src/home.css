@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE&display=swap');
+
+.home {
+    /* background: linear-gradient(to bottom, #EAE7DC , #5D001E); */
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto';
+    padding-top: 7%;
+    width: 75%;
+}
+.body-text {
+    font-size: 1.1rem;
+    color: rgba(0,0,0, 0.7);
+    width: 80%;
+    text-align: justify;
+}
+.title {
+    font-size: 3rem;
+    font-family: 'SUSE';
+}
+.picture {
+    height: 60dvh;
+    transition: transform 0.3s ease-in;
+}
+.picture:hover {
+    transform: scale(1.2);
+}
