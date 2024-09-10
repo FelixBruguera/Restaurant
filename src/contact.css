@@ -4,14 +4,14 @@
     align-items: center;
     font-family: 'Roboto';
     padding-top: 2%;
-    width: 85%;
-    gap: 32px;
+    gap: 42px;
 }
 .contact > h1, h2 {
     color: rgba(0, 0, 0, 0.7);
+    text-align: center;
 }
 .contact-icon {
-    width: 50px;
+    width: 20%;
 }
 .contact-cards {
     display: flex;
@@ -26,14 +26,12 @@
     align-items: center;
     font-weight: 500;
     font-size: 1rem;
-    gap: 16px;
+    gap: 1%;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 50px;
-    padding: 8px 16px 8px 16px;
+    padding: 0.5% 1% 0.5% 1%;
     box-shadow: 0px 4px 4px #00000030, 0px 12px 12px #00000015;
     transition: transform 0.3s ease-in-out;
-    /* background-color: var(--color-tertiary); */
-    /* color: white; */
 }
 .contact-container:hover {
     transform: scale(1.1);
@@ -53,7 +51,6 @@ form {
     height: 70%;
     width: 100%;
     gap: 20px;
-    /* display: none; */
 }
 .form-info {
     display: flex;
@@ -61,13 +58,13 @@ form {
     justify-content: space-evenly;
     align-items: center;
 }
-form > button {
+.form-submit {
     border: 1px solid black;
 }
 .form-input {
     display: flex;
     flex-direction: column;
-    width: 170px;
+    width: 35%;
     justify-content: space-between;
     align-items: center;
     height: 36px;
@@ -75,29 +72,26 @@ form > button {
     border-radius: 10px;
     box-shadow: 0px 2px 2px #00000030, 0px 6px 6px #00000015;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 label {
     display: none;
 }
 textarea {
-    height: 48px;
+    height: 64px;
     width: 384px;
     border-radius: 10px;
     box-shadow: 0px 2px 2px #00000030, 0px 6px 6px #00000015;
     border: 1px solid rgba(0, 0, 0, 0.3);
     text-align: center;
     font-family: 'Roboto';
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
-form > button:hover {
+.form-submit:hover {
     cursor: pointer;
 }
 .form-input:hover, textarea:hover {
     border: 1px solid var(--color-tertiary);
-}
-.form-response {
-    margin: 50% ;
 }
 .fade-in {
     animation: fade-in 0.5s ease-in;
@@ -105,5 +99,22 @@ form > button:hover {
 @keyframes fade-in {
     0% {opacity: 10%;}
     100% {opacity: 100%;}
-    
+}
+
+@media (max-width: 550px) {
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+    .form-info {
+        width: 100%;
+    }
+    textarea {
+        width: 288px;
+    }
+    .form-submit {
+        width: 35%;
+    }
 }

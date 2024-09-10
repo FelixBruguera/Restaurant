@@ -1,27 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=SUSE&display=swap');
 
 .home {
-    /* background: linear-gradient(to bottom, #EAE7DC , #5D001E); */
     display: flex;
     justify-content: space-between;
     font-family: 'Roboto';
     padding-top: 7%;
-    width: 75%;
+    align-items: start;
+}
+.text-container {
+    width: 40%;
 }
 .body-text {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: rgba(0,0,0, 0.7);
-    width: 80%;
+    width: 100%;
     text-align: justify;
 }
 .title {
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-family: 'SUSE';
 }
 .picture {
-    height: 60dvh;
+    height: 65dvh;
     transition: transform 0.3s ease-in;
 }
 .picture:hover {
     transform: scale(1.2);
+}
+@media (max-width: 550px ) {
+    .picture {
+        height: 30dvh;
+    }
+    .home {
+        align-items: center;
+        flex-direction: column;
+    }
+    .text-container {
+        width: 100%;
+    }
 }

@@ -20,11 +20,22 @@ export default class Helpers {
     makeCard(img, imgAlt, title, description, price) {
         img = this.makeImg(img, imgAlt, 'card-img')
         title = this.makeElement('h3', title, 'card-title')
-        price = this.makeElement('p', price, 'card-price')
+        price = this.makeElement('p', '$'+price, 'card-price')
         description = this.makeElement('p', description, 'card-description')
-        let text = this.wrapElements([title, description, price], 'div', 'card-text')
+        let button = this.makeElement('button', '+', 'add-button')
+        let lowerText = this.wrapElements([price, button], 'div', 'card-lower-text')
+        let text = this.wrapElements([title, description, lowerText], 'div', 'card-text')
         let card = this.wrapElements([img, text], 'div', 'card')
         return card
+    }
+    makeCartItem(img, imgAlt, title, price, id) {
+        img = this.makeImg(img, imgAlt, 'item-img')
+        title = this.makeElement('p', title, 'item-title')
+        price = this.makeElement('p', price, 'item-price')
+        let button = this.makeElement('button', '-', 'cart-remove-button')
+        button.dataset.id = id
+        let item = this.wrapElements([img, title, price, button], 'div', 'item')
+        return item
     }
     makeInput(inputName, inputPlaceholder, inputType) {
         let input = this.makeElement('input', '', 'form-input')

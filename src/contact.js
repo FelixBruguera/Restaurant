@@ -25,8 +25,7 @@ function handleForm(event) {
     const form = new FormData(document.querySelector('form'))
     const page = document.querySelector('.contact')
     page.textContent = ''
-    let mainMessage = doc.makeElement('h1', `Thanks for your message, ${form.get('name')}`, 'form-response')
-    mainMessage.className = 'fade-in'
+    let mainMessage = doc.makeElement('h1', `Thanks for your message, ${form.get('name')}`, 'fade-in')
     page.appendChild(mainMessage)
 }
 

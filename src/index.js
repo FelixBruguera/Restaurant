@@ -1,8 +1,10 @@
 import { renderHome } from "./home";
 import { renderMenu } from "./menu"
 import { renderContact } from "./contact"
+import { renderCart, Cart } from "./cart"
 import './general.css'
 
+const cart = new Cart()
 let currentPage = 'home'
 const nav = document.querySelector('nav')
 let navButtons = nav.querySelectorAll('button')
@@ -29,6 +31,11 @@ function changePage(event) {
             content.className = 'contact'
             renderContact(content)
             break
+        case 'cart':
+            currentPage = 'cart'
+            content.className = 'cart'
+            renderCart(content)
+            break  
     }
 }
 
@@ -37,4 +44,6 @@ function clearPage() {
 }
 const content = document.querySelector('#content')
 renderHome(content)
+
+export { cart }
 
