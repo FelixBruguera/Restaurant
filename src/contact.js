@@ -9,7 +9,7 @@ const doc = new Helpers()
 
 function renderForm() {
     let form = document.createElement('form')
-    let messageTitle = doc.makeElement('h2', 'Send us a message', 'contact-info')
+    let messageTitle = doc.makeElement('h2', 'Send us a message', 'empty-cart-main', true)
     let nameInput = doc.makeInput('name', 'Name','text')
     let emailInput = doc.makeInput('email', 'Email','email')
     let messageInput = doc.makeTextarea('Your message')
@@ -25,20 +25,20 @@ function handleForm(event) {
     const form = new FormData(document.querySelector('form'))
     const page = document.querySelector('.contact')
     page.textContent = ''
-    let mainMessage = doc.makeElement('h1', `Thanks for your message, ${form.get('name')}`, 'fade-in')
+    let mainMessage = doc.makeElement('h1', `Thanks for your message, ${form.get('name')}`, 'fade-in', true)
     page.appendChild(mainMessage)
 }
 
 function elements() {
-    let mainText = doc.makeElement('h1', 'We would love to hear from you', 'contact-info')
-    let phone = doc.makeImg(Call, 'A phone', 'contact-icon')
-    let phoneNumber = doc.makeElement('p', '123-456-789', 'contact-info')
+    let mainText = doc.makeElement('h1', 'We would love to hear from you', 'empty-cart-main', true)
+    let phone = doc.makeImg(Call, 'Phone', 'contact-icon', true)
+    let phoneNumber = doc.makeElement('p', '123-456-789', 'contact-info', true)
     let contactNumber = doc.wrapElements([phone, phoneNumber], 'div', 'contact-container')
-    let mail = doc.makeImg(Mail, 'Email logo', 'contact-icon')
-    let email = doc.makeElement('p', 'contact@odinrestaurant.com', 'contact-info')
+    let mail = doc.makeImg(Mail, 'Email', 'contact-icon', true)
+    let email = doc.makeElement('p', 'contact@odinrestaurant.com', 'contact-info', true)
     let contactEmail = doc.wrapElements([mail, email], 'div', 'contact-container')
-    let pin = doc.makeImg(Pin, 'A phone', 'contact-icon')
-    let address = doc.makeElement('p', '123 Street, Asgard', 'contact-info')
+    let pin = doc.makeImg(Pin, 'Address', 'contact-icon', true)
+    let address = doc.makeElement('p', '123 Street, Asgard', 'contact-info', true)
     let contactAddress = doc.wrapElements([pin, address], 'div', 'contact-container')
     let contactCards = doc.wrapElements([contactNumber, contactEmail, contactAddress], 'div', 'contact-cards')
     const form = renderForm()

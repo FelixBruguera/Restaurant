@@ -5,9 +5,9 @@ import "./home.css";
 const doc = new Helpers()
 
 function elements() {
-    let title = doc.makeElement('h1', 'Odin Restaurant', 'title')
-    let bodyText = doc.makeElement('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue diam sed posuere varius. Ut quis metus id felis pharetra interdum id sed tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'body-text')
-    let img = doc.makeImg(image, 'A Christmas food platter', 'picture')
+    let title = doc.makeElement('h1', 'Odin Restaurant', 'title', true)
+    let bodyText = doc.makeElement('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue diam sed posuere varius. Ut quis metus id felis pharetra interdum id sed tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'body-text', true)
+    let img = doc.makeImg(image, 'A Christmas food platter', 'picture', true)
     let text = doc.wrapElements([title, bodyText], 'div', 'text-container')
     return [text, img]
 }

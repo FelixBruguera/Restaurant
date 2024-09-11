@@ -4,11 +4,7 @@
     align-items: center;
     font-family: 'Roboto';
     padding-top: 2%;
-    gap: 42px;
-}
-.contact > h1, h2 {
-    color: rgba(0, 0, 0, 0.7);
-    text-align: center;
+    gap: 32px;
 }
 .contact-icon {
     width: 20%;
@@ -78,7 +74,7 @@ label {
     display: none;
 }
 textarea {
-    height: 64px;
+    height: 54px;
     width: 384px;
     border-radius: 10px;
     box-shadow: 0px 2px 2px #00000030, 0px 6px 6px #00000015;
@@ -102,6 +98,9 @@ textarea {
 }
 
 @media (max-width: 550px) {
+    .contact > h1, h2{
+        text-align: center;
+    }
     .contact-cards {
         flex-direction: column;
         align-items: center;

@@ -19,7 +19,6 @@ class Cart {
     }
     remove(item) {
         let id = this.find(item.id)
-        console.log(id)
         if (id.length > 0) {
             let index = this.items.indexOf(id[0])
             this.items.splice(index, 1)}
@@ -42,7 +41,7 @@ function elements(cart) {
         card.addEventListener('click', (e) => removeItem(e, item))
         container.appendChild(card)
     });
-    let total = doc.makeElement('p', 'Total: $'+totalPrice, 'cart-price')
+    let total = doc.makeElement('h2', 'Total: $'+totalPrice, 'cart-price', true)
     let checkout = doc.makeElement('button', 'Complete order', 'cart-checkout')
     checkout.addEventListener('click', renderCheckout)
     let cartLower = doc.wrapElements([total, checkout], 'div', 'cart-lower')
@@ -52,8 +51,8 @@ function elements(cart) {
 }
 
 function renderEmptyCart() {
-    let mainText = doc.makeElement('h1', 'Your cart is empty', 'empty-cart-main')
-    let subText = doc.makeElement('p', 'Add some items from the menu', 'empty-cart-subtext')
+    let mainText = doc.makeElement('h1', 'Your cart is empty', 'empty-cart-main', true)
+    let subText = doc.makeElement('p', 'Add some items from the menu', 'empty-cart-subtext', true)
     return doc.wrapElements([mainText, subText], 'div', 'empty-cart')
 }
 
@@ -74,8 +73,8 @@ function renderCheckout() {
     const page = document.querySelector('.cart')
     page.textContent = ''
     cart.empty()
-    let message = doc.makeElement('h1', 'Order completed', 'fade-in')
-    let check = doc.makeImg(Check, 'A green check', 'checkout-img')
+    let message = doc.makeElement('h1', 'Order completed', 'fade-in', true)
+    let check = doc.makeImg(Check, 'A green check', 'checkout-img', true)
     let content = doc.wrapElements([message, check], 'div', 'checkout')
     page.appendChild(content)
 }

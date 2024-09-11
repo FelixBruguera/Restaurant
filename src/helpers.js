@@ -1,15 +1,17 @@
 export default class Helpers {
-    makeElement(elemType, elemContent, elemClass) {
+    makeElement(elemType, elemContent, elemClass, focusable = false) {
         let elem = document.createElement(elemType)
         elem.textContent = elemContent
         elem.className = elemClass
+        if (focusable == true) {elem.tabIndex = 0}
         return elem
     }
-    makeImg(src, alt, elemClass) {
+    makeImg(src, alt, elemClass, focusable = false) {
         let elem = document.createElement('img')
         elem.src = src
         elem.alt = alt
         elem.className = elemClass
+        if (focusable == true) {elem.tabIndex = 0}
         return elem
     }
     wrapElements(elements = [], containerType, containerClass) {
@@ -18,20 +20,21 @@ export default class Helpers {
         return container
     }
     makeCard(img, imgAlt, title, description, price) {
-        img = this.makeImg(img, imgAlt, 'card-img')
-        title = this.makeElement('h3', title, 'card-title')
-        price = this.makeElement('p', '$'+price, 'card-price')
-        description = this.makeElement('p', description, 'card-description')
+        img = this.makeImg(img, imgAlt, 'card-img', true)
+        title = this.makeElement('h3', title, 'card-title', true)
+        price = this.makeElement('p', '$'+price, 'card-price', true)
+        description = this.makeElement('p', description, 'card-description', true)
         let button = this.makeElement('button', '+', 'add-button')
         let lowerText = this.wrapElements([price, button], 'div', 'card-lower-text')
         let text = this.wrapElements([title, description, lowerText], 'div', 'card-text')
         let card = this.wrapElements([img, text], 'div', 'card')
+
         return card
     }
     makeCartItem(img, imgAlt, title, price, id) {
-        img = this.makeImg(img, imgAlt, 'item-img')
-        title = this.makeElement('p', title, 'item-title')
-        price = this.makeElement('p', price, 'item-price')
+        img = this.makeImg(img, imgAlt, 'item-img', true)
+        title = this.makeElement('p', title, 'item-title', true)
+        price = this.makeElement('p', price, 'item-price', true)
         let button = this.makeElement('button', '-', 'cart-remove-button')
         button.dataset.id = id
         let item = this.wrapElements([img, title, price, button], 'div', 'item')
